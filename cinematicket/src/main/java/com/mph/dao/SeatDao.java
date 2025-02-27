@@ -1,9 +1,6 @@
 package com.mph.dao;
 
-/**
- * @author Rishabh
- *
- */
+
 import java.util.List;
 
 import com.mph.entity.Seat;

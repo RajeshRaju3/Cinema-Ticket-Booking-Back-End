@@ -1,9 +1,6 @@
 package com.mph.entity;
 
-/**
- * @author Rishabh
- *
- */
+
 import java.util.List;
 
 import javax.persistence.Column;

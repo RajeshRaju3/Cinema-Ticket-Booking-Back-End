@@ -1,9 +1,6 @@
 package com.mph.service;
 
-/**
- * @author Prajjawal 
- *
- */
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;

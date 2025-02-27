@@ -1,9 +1,6 @@
 package com.mph.test;
 
-/**
- * @author Prashant
- *
- */
+
 import static org.junit.Assert.assertEquals;
 
 import java.util.List;

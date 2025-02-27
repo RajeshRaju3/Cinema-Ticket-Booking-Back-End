@@ -1,9 +1,5 @@
 package com.mph.entity;
 
-/**
- * @author Rishabh
- *
- */
 
 
 import javax.persistence.Column;
