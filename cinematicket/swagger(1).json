@@ -1,0 +1,594 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Cinema Ticket Booking System Rest Doc"
+  },
+  "host": "localhost:8080",
+  "basePath": "/cinematicket",
+  "tags": [
+    {
+      "name": "user",
+      "description": "CRUD operations with User"
+    },
+    {
+      "name": "seat",
+      "description": "CRUD operation with Seat"
+    },
+    {
+      "name": "booking",
+      "description": "CRUD operation with Booking"
+    },
+    {
+      "name": "movie",
+      "description": "CRUD operation with Admin"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/user/allUser": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Finds all user",
+        "operationId": "findAllUser",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/user/addUser": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Add a user",
+        "operationId": "addAUser",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "user that needs to be added",
+            "required": true,
+            "schema": {
+              "$ref": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/user/deleteUser/{uid}": {
+      "delete": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Delete a user",
+        "operationId": "deleteAUser",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "uid",
+            "in": "path",
+            "description": "ID of role to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/user/updateUser": {
+      "put": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Update a user",
+        "operationId": "updateAllUser",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "user that needs to be updated",
+            "required": true,
+            "schema": {
+              "$ref": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/user/searchUser/{uid}": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Find a user",
+        "operationId": "searchAUser",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "uid",
+            "in": "path",
+            "description": "ID of role to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/seat/setSeat": {
+      "post": {
+        "tags": [
+          "seat"
+        ],
+        "summary": "Add a seat",
+        "operationId": "addASeat",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "seat that needs to be added",
+            "required": true,
+            "schema": {
+              "$ref": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/seat/deleteSeat/{id}": {
+      "delete": {
+        "tags": [
+          "seat"
+        ],
+        "summary": "Delete seat",
+        "operationId": "deleteASeat",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of role to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/seat/updateSeat": {
+      "put": {
+        "tags": [
+          "seat"
+        ],
+        "summary": "Update a seat",
+        "operationId": "updateASeat",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "seat that needs to be updated",
+            "required": true,
+            "schema": {
+              "$ref": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/seat/searchSeat": {
+      "get": {
+        "tags": [
+          "seat"
+        ],
+        "summary": "Search aseat",
+        "operationId": "searchAllUser",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/booking/setbooking": {
+      "post": {
+        "tags": [
+          "booking"
+        ],
+        "summary": "Add a booking",
+        "operationId": "addABooking",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "booking that needs to be added",
+            "required": true,
+            "schema": {
+              "$ref": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/booking/updatebooking": {
+      "post": {
+        "tags": [
+          "booking"
+        ],
+        "summary": "update a booking",
+        "operationId": "updateABooking",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "booking that needs to be updated",
+            "required": true,
+            "schema": {
+              "$ref": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/booking/deletebooking/{id}": {
+      "delete": {
+        "tags": [
+          "booking"
+        ],
+        "summary": "Delete a booking",
+        "operationId": "deleteABooking",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of role to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/booking/searchbooking/{uid}": {
+      "get": {
+        "tags": [
+          "booking"
+        ],
+        "summary": "Search a booking",
+        "operationId": "searchABooking",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "uid",
+            "in": "path",
+            "description": "ID of role to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/booking/allBookings": {
+      "get": {
+        "tags": [
+          "booking"
+        ],
+        "summary": "Find all bookings",
+        "operationId": "findAllBookings",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/movie/setmovie": {
+      "post": {
+        "tags": [
+          "movie"
+        ],
+        "summary": "Add a movie",
+        "operationId": "addAMovie",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "movie that needs to be added",
+            "required": true,
+            "schema": {
+              "$ref": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/movie/allMovie": {
+      "post": {
+        "tags": [
+          "movie"
+        ],
+        "summary": "Get all movies",
+        "operationId": "getAllMovies",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/movie/deleteMovie/{id}": {
+      "delete": {
+        "tags": [
+          "movie"
+        ],
+        "summary": "Delete a movie",
+        "operationId": "deleteAlMovie",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of role to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/movie/updatemovie": {
+      "put": {
+        "tags": [
+          "movie"
+        ],
+        "summary": "Update a movie",
+        "operationId": "updateAlMovie",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "movie that needs to be updated",
+            "required": true,
+            "schema": {
+              "$ref": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/movie/searchmovie/{uid}": {
+      "get": {
+        "tags": [
+          "movie"
+        ],
+        "summary": "Search a movie",
+        "operationId": "searchAMovie",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "uid",
+            "in": "path",
+            "description": "ID of role to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    }
+  }
+}
